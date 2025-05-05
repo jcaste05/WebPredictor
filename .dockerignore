@@ -2,3 +2,5 @@ __pycache__
 *.pyc
 *.pyo
 tmp/
+.github/
+.pytest_cache/
