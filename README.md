@@ -80,3 +80,11 @@ docker run -p 8080:8080 --name webpredictor webpredictor:latest
 
 ## How to use the web
 1. Open your web browser and go to `http://localhost:8080`.
+
+2. Upload your `CSV` with the column with missing data you want to predict.
+
+3. Select the column which will be predicted.
+
+4. Wait for a pop up indicating that certain number of rows has been predicted.
+
+5. You can click the download button to get the original CSV with the predictions.
