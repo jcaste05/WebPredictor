@@ -1,7 +1,8 @@
 import logging
-import tempfile
 import os
+import tempfile
 
+import numpy as np
 import pandas as pd
 from nicegui import ui
 
@@ -47,9 +48,9 @@ def predict_df(data, target_column):
     model = SkLearnTabRegressor()
     model.fit(X_train, y_train)
     pred_train = model.predict(X_train)
-    mse_train = (
-        (pred_train[f"{target_column}_hat"] - y_train[target_column]) ** 2
-    ).mean()
+    mse_train = np.mean(
+        np.square(pred_train[f"{target_column}_hat"].values - y_train[target_column].values)
+    )
     sd_train = y_train[target_column].std()
     logger.info(f"MSE train: {mse_train}")
     logger.info(f"SD train: {sd_train}")
